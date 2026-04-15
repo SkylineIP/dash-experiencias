@@ -58,26 +58,6 @@ def render_equipe(
             fig2.update_layout(showlegend=False, margin=dict(l=0, r=0, t=10, b=0))
             st.plotly_chart(fig2, use_container_width=True, key=f"pie_tipo_{titulo}")
 
-    # Heatmap pessoa x tipo
-    if not df_equipe_exp.empty:
-        pivot = (
-            df_equipe_exp.groupby([col_nome, "_tipo"])
-            .size()
-            .reset_index(name="Qtd")
-            .pivot(index=col_nome, columns="_tipo", values="Qtd")
-            .fillna(0)
-            .astype(int)
-        )
-        fig3 = px.imshow(
-            pivot,
-            text_auto=True,
-            color_continuous_scale=[[0, "#f8fafc"], [1, cor]],
-            aspect="auto",
-            labels={"x": "Tipo de serviço", "y": "Pessoa", "color": "Qtd"},
-        )
-        fig3.update_layout(coloraxis_showscale=False, margin=dict(l=0, r=0, t=10, b=0))
-        st.plotly_chart(fig3, use_container_width=True, key=f"heat_{titulo}")
-
     # Linha mensal por pessoa
     if "_mes_order" in df_equipe.columns and df_equipe["_mes_order"].notna().any():
         mensal = (

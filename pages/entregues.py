@@ -115,7 +115,7 @@ render_produtos(df_ano, df_ano_exp, df_f, df_exp, col_nome, col_tipo, col_emp)
 # ------------------------------------------------------------------
 st.subheader(f"Resumo Geral — {ANO_ATUAL}")
 k1, k2, k3, k4 = st.columns(4)
-k1.metric("Total de entregas", f"{len(df_f):,}")
+k1.metric("Atividades realizadas", f"{len(df_f):,}")
 k2.metric("Pessoas ativas", df_f[col_nome].nunique())
 tipo_top = df_exp["_tipo"].value_counts().idxmax() if not df_exp.empty else "—"
 k3.metric("Tipo mais frequente", tipo_top)

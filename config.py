@@ -27,6 +27,8 @@ TIPOS_SALA: list[str] = [
     "Sala Semicircular", "Sala Semicircular cor", "Sala Trapézio", "Sala Imersiva",
 ]
 TIPOS_PRODUTO: list[str] = TIPOS_TELA + TIPOS_SALA
+TIPOS_PROJETO: list[str] = TIPOS_PRODUTO + ["Novo produto"]
+TIPOS_AJUSTE:  list[str] = ["Ajustes", "Interno", "Sistemas"]
 
 # Sistema de prioridade por prazo (dias restantes → cor)
 PRIORIDADES_PRAZO: list[tuple] = [
