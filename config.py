@@ -1,10 +1,9 @@
 ANO_ATUAL = 2026
 
-# URLs e senha lidas dos secrets (local: .streamlit/secrets.toml | produção: Streamlit Cloud)
+# URLs lidas dos secrets (local: .streamlit/secrets.toml | produção: Streamlit Cloud)
 import streamlit as _st
 URL_ENTREGUES: str = _st.secrets["URL_ENTREGUES"]
 URL_ANDAMENTO: str = _st.secrets["URL_ANDAMENTO"]
-SENHA: str         = _st.secrets["SENHA"]
 
 DESIGNERS     = ["Bia Leão", "Gustavo", "Jack", "Millena"]
 PROGRAMADORES = ["Fernando", "Kaleb", "Bia Fernandes", "Leonardo"]
